@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap');
+
+body {
+	margin: 0px;
+	background-color:#141311;
+	color:white;
+	width:1280px;
+	height:720px;
+	overflow:hidden;
+}
+
+.container {
+}
+
+.container .item {
+    position: absolute;
+    width: 1280px;
+    height: 720px;
+}
+
+.container .item.units {
+	display: none;
+}
+
+.container .item.message {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+   	background-color: black;
+    font-size: 96px;
+    height: 720px;
+    font-family: "Cascadia Code";
+    background-color: #141311;
+}
