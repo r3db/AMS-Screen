@@ -3,7 +3,8 @@ It gives you a dedicated Bambu Lab AMS Screen via a Raspberry PI.
 **Note: This is a very early prototype.**
 **In order for it to work this device and you bambu printer need to be in the same network**
 
-<img width="1262" height="701" alt="image" src="https://github.com/user-attachments/assets/879375ba-5043-4e12-a361-89d65500b8b0" />
+<img width="1087" height="660" alt="image" src="https://github.com/user-attachments/assets/8912e39c-28ac-478b-8855-b2c8cc6db85a" />
+
 
 **To compile:**
 ```
