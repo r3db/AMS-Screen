@@ -97,7 +97,7 @@ public sealed class BambuMqttService(IHubContext<PrinterHub> hubContext, IOption
         }
 
         var trayCount = 0;
-        var activeTrayIndex = GetActiveTrayIndex(json);
+        var activeTrayIndex = GetActiveTrayIndex(amsWrapper);
 
         return [.. amsPayload
             .EnumerateArray()
@@ -121,14 +121,19 @@ public sealed class BambuMqttService(IHubContext<PrinterHub> hubContext, IOption
 
     private static int GetActiveTrayIndex(JsonElement json)
     {
-        int result = -1;
-
-        if (json.TryGetProperty("active_tray", out var activeTrayProp) && activeTrayProp.ValueKind == JsonValueKind.Number)
+        if (json.TryGetProperty("tray_now", out var currentTray))
         {
-            result = activeTrayProp.GetInt32();
+            if (currentTray.ValueKind == JsonValueKind.Number && currentTray.TryGetInt32(out var numVal))
+            {
+                return numVal == 255 ? -1 : numVal;
+            }
+            if (currentTray.ValueKind == JsonValueKind.String && int.TryParse(currentTray.GetString(), out var parsedVal))
+            {
+                return parsedVal == 255 ? -1 : parsedVal;
+            }
         }
 
-        return result;
+        return -1;
     }
 
     private static List<TrayInfo> GetTrays(JsonElement json, int trayCountAccumulator, int activeTrayIndex)
