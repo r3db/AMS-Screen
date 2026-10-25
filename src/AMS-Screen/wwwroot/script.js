@@ -94,6 +94,7 @@ function setupSignalR() {
 	connection.on("AMS-Units", function (units) {
 		hideConnectingMessage();
 		showUnits();
+		hideConnectors();
 
 		for (var i = 0; i < units.length; i++) {
 			let unit = units[i];
@@ -110,7 +111,6 @@ function setupSignalR() {
 				updateSpool(tray.index, tray.color, tray.type, tray.weight);
 
 				if (tray.isActive) {
-					hideConnectors();
 					showConnector(tray.index);
 				}
 			}
