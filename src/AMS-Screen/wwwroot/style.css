@@ -2,11 +2,12 @@
 
 body {
 	margin: 0px;
-	background-color:#141311;
-	color:white;
-	width:1280px;
-	height:720px;
-	overflow:hidden;
+	background-color: #333;
+	color: #f4f4f4;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	font-family: "Cascadia Code", "Cascadia Mono", Consolas, "DejaVu Sans Mono", monospace;
 }
 
 .container {
@@ -14,21 +15,53 @@ body {
 
 .container .item {
     position: absolute;
-    width: 1280px;
-    height: 720px;
+    width: 100vw;
+    height: 100vh;
 }
 
 .container .item.units {
 	display: none;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scrollbar-width: none;
+	cursor: grab;
+	user-select: none;
+	outline: none;
+}
+
+.container .item.units::-webkit-scrollbar {
+	display: none;
+}
+
+.container .item.units.dragging {
+	cursor: grabbing;
 }
 
 .container .item.message {
 	display: flex;
     justify-content: center;
     align-items: center;
-   	background-color: black;
     font-size: 96px;
-    height: 720px;
-    font-family: "Cascadia Code";
-    background-color: #141311;
+    background-color: #333;
 }
+
+/* One carousel page */
+.page {
+	flex: 0 0 100%;
+	height: 100%;
+	scroll-snap-align: center;
+	scroll-snap-stop: always;
+}
+
+.page svg {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+/* Text inside the unit drawings */
+.spool-type   { font-size: 40px; font-weight: 600; fill: #f4f4f4; text-anchor: middle; }
+.spool-weight { font-size: 27px; fill: #f4f4f4; text-anchor: middle; }
+.unit-name    { font-size: 40px; font-weight: 600; fill: #f4f4f4; text-anchor: middle; }
+.reading      { font-size: 28px; fill: #f4f4f4; text-anchor: middle; }
+.reading.small{ font-size: 24px; }
