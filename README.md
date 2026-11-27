@@ -5,8 +5,11 @@ But you can run this code in a **PC** a **Mac** or **Raspberry PI**.<br><br>
 **Your device and the printer need to be in the same network**
 
 **UI**<br><br>
-<img width="1000" height="660" alt="image" src="https://github.com/user-attachments/assets/8912e39c-28ac-478b-8855-b2c8cc6db85a" />
+<img width="1292" height="889" alt="image" src="https://github.com/user-attachments/assets/244e167d-82e7-42cf-969c-b8dbc048e33b" />
 <br><br>
+<img width="501" height="895" alt="image" src="https://github.com/user-attachments/assets/4552a22a-2ec5-4bfa-9c06-885c1b208fb4" />
+<br><br>
+
 **3D Model**<br>
 https://makerworld.com/en/models/3485018<br><br>
 <img width="1000" height="750" alt="image" src="https://github.com/user-attachments/assets/b88b4c5f-6120-4f9e-b9c3-02fdb0e507e6" />
