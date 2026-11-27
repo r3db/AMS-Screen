@@ -22,7 +22,7 @@ Locate `src\AMS-Screen\appsettings.json` and replace with your printer settings.
 
 **To compile:**
 ```
-dotnet publish -c Release -r linux-arm --self-contained true
+dotnet publish -c Release -r linux-arm --self-contained true -p:PublishSingleFile=true
 ```
 
 **To Run:**
